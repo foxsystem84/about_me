@@ -1,0 +1,108 @@
+.main{
+    background-color: #11141b;  
+    padding-top: 50px; 
+    
+}
+.main__about-me{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    color: white;  
+}
+.main__contain{
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+    padding-left: 100px;
+    padding-bottom: 50px;
+}
+.main__contain-img{
+    border: 15px solid #fff;
+    border-radius: 10px;
+    
+}
+.main__contain-img img{
+    width: 100%;
+}
+img{
+    vertical-align: middle;
+    border-style: none;
+}
+.main__contain-right{
+    padding-left: 30px;
+    padding-right: 100px;
+    width: 50%;
+    font-size: 14px;
+    color: #c5c5c5;
+    line-height: 24px;
+    font-family: 'Rubik', sans-serif;
+}
+.main__title{
+    margin-bottom: 75px;    
+}
+.main__title h2:after{
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(165, 165, 165), rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    width: 100%; 
+    content: "";
+    bottom: 0px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.color-text {
+    color: #ffc209;
+}
+.main__title h2 {
+    position: relative;
+    font-weight: 700;
+    padding-bottom: 20px;
+    font-size: 40px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+::after, ::before {
+    box-sizing: border-box;
+}
+.main__contain-right h3{
+    font-size: 25px;
+}
+.main__contain-right h6{
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.btn-cv::after{
+    content: '';
+    width: 45%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out 0s;
+}
+.btn-cv{
+    position: relative;
+    padding: 9px 15px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 400;    
+    font-family: 'Teko', sans-serif;
+    
+}
+.btn-cv:hover::after{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.07);
+    
+}
