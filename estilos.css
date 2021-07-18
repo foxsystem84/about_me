@@ -104,5 +104,130 @@ img{
 .btn-cv:hover::after{
     width: 100%;
     background: rgba(255, 255, 255, 0.07);
+}    
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;    
+}
+a{
+    transition: all 0.5s ease-in-out 0s;
     
+}
+a:hover{
+    opacity: .5;
+}
+.menu-nav{        
+    width: 100%;        
+    z-index: 1;    
+    position: fixed; 
+}
+.menu-nav__link{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 250px;    
+      
+}
+.fixed-top{
+     height: 80px;     
+     background-color: white;         
+     transition: all 1s ease-in-out;
+}
+.removeFixed{
+    background-color: transparent;
+    transition: all .7s linear;
+}
+.menu-nav.fixed-top--color  a{
+    color: black;
+}
+.menu-nav__link > a{
+    /*padding-left: 20px;*/    
+    font-size: 30px;
+    text-decoration: none;
+    color: #ffc209;
+    font-weight: bold;
+    opacity: 1;
+}
+ul{
+    display: flex;
+    justify-content: flex-end;
+}
+ul li{
+    list-style: none; 
+    padding-left: 30px;   
+}
+ul a{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.header{
+    background: url(./imagenes/home-bg.jpg);
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /*height: 100vh;*/
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: 0;
+    padding-bottom: 0px;
+}   
+.hero__equal{
+    position: relative;
+    min-height: 660px;
+    /*width: 100%;
+    height: 100%;*/
+}
+.header__text-center{
+    position: absolute;    
+    bottom: 100px;
+    color: white;
+}
+.header__text-center h3{
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.header__text-content-words h1{
+    margin-bottom: 20px;  
+    font-size: 60px;
+    font-weight: bolder;  
+}
+.header__socialmedia a{
+    display: inline-block;
+    color: white;
+    padding: 0px 10px;    
+}
+
+.button{    
+    display:inline-block;    
+    padding: 12px 30px;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;    
+    color: white;
+    background-color: #f55422; 
+    margin-right: 15px;    
+    margin-top: 25px;
+    margin-bottom: 50px;
+    vertical-align: middle;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid #f55422;
+    text-decoration: none;
+    
+}
+.button:hover{
+    color: #fff;
+    background: transparent;
+    border: 2px solid #f55422;
+    opacity: 1;
 }
