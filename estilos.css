@@ -4,26 +4,51 @@
     font-family: 'Mulish', sans-serif;    
 }
 a{
-    transition: all 0.5s ease-in-out 0s;
-    
+    transition: all 0.5s ease-in-out 0s;    
 }
-a:hover{
-    opacity: .5;
+.section-pading{
+    padding: 100px 0;
+}
+.bg-dark{
+    background-color: #11141b;        
+}
+.container{    
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .menu-nav{        
     width: 100%;        
     z-index: 1;    
-    position: fixed; 
+    position: fixed;     
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .menu-nav__link{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 25px 250px;    
-      
+    justify-content: space-between;
+    align-content: center;      
+}
+.menu-nav__link a{
+    transition: all 0.5s ease-in-out 0s;
+}
+.menu-nav__link a:hover{
+    opacity: 0.5;
+}
+.menu-nav__link > a{
+    /*padding-left: 20px;*/    
+    font-size: 30px;
+    text-decoration: none;
+    color: #ffc209;
+    font-weight: bold;
+    opacity: 1;
+}
+.menu-nav__link > a:hover{
+    opacity: 1;
 }
 .fixed-top{
-     height: 80px;     
+     height: 40px;     
      background-color: white;         
      transition: all 1s ease-in-out;
 }
@@ -34,17 +59,10 @@ a:hover{
 .menu-nav.fixed-top--color  a{
     color: black;
 }
-.menu-nav__link > a{
-    /*padding-left: 20px;*/    
-    font-size: 30px;
-    text-decoration: none;
-    color: #ffc209;
-    font-weight: bold;
-    opacity: 1;
-}
 ul{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 ul li{
     list-style: none; 
@@ -78,7 +96,9 @@ ul a{
     height: 100%;*/
 }
 .header__text-center{
-    position: absolute;    
+    position: absolute;  
+    left: 0;
+    right: 0;  
     bottom: 100px;
     color: white;
 }
@@ -95,7 +115,11 @@ ul a{
 .header__socialmedia a{
     display: inline-block;
     color: white;
-    padding: 0px 10px;    
+    padding: 0px 10px;   
+    transition: all 0.5s ease-in-out 0s; 
+}
+.header__socialmedia a:hover{
+    opacity: .5;
 }
 
 .button{    
@@ -123,66 +147,76 @@ ul a{
     border: 2px solid #f55422;
     opacity: 1;
 }
-.main{
-    background-color: #11141b;  
-    padding-top: 50px; 
-    
-}
-.main__about-me{
+/*********************** A B O U T ******************/
+.about{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-around;
+    
     align-items: center;  
     color: white;  
 }
-.main__contain{
+
+.about__contain{
     display: flex;
-    justify-content: space-between;    
+    justify-content:space-between;   
+    flex-direction: row;   
+    
     align-items: center;
-    padding-left: 100px;
+    /*padding-left: 100px;*/
     padding-bottom: 50px;
 }
-.main__contain-img{
+.about__contain-img{
     border: 15px solid #fff;
     border-radius: 10px;
-    
+    margin-right: 15px;
+    /*margin-left: 15px;*/
+    width: 50%; 
 }
-.main__contain-img img{
+.about__contain-img img{
     width: 100%;
 }
+/*.img-fluid {
+    max-width: 100%;
+    height: auto;
+}*/
 img{
     vertical-align: middle;
     border-style: none;
 }
-.main__contain-right{
-    padding-left: 30px;
-    padding-right: 100px;
+.about__contain-text{
+    /*margin-left: 15px;
+    margin-right: 15px;*/
+    margin-left: 15px;
     width: 50%;
     font-size: 14px;
     color: #c5c5c5;
     line-height: 24px;
     font-family: 'Rubik', sans-serif;
 }
-.main__title{
+.about__contain-text p{
+    margin-bottom: 20px;
+}
+.about__title{
     margin-bottom: 75px;    
 }
-.main__title h2:after{
+.about__title h2:after{
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(165, 165, 165), rgba(0, 0, 0, 0));
-    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(165, 165, 165), rgba(0, 0, 0, 0));
     position: absolute;
     left: 0;
     right: 0;
+    bottom: 0px;
     height: 1px;
     width: 100%; 
-    content: "";
-    bottom: 0px;
+    content: "";    
     max-width: 300px;
     margin: 0 auto;
 }
 .color-text {
     color: #ffc209;
 }
-.main__title h2 {
+.about__title h2 {
     position: relative;
     font-weight: 700;
     padding-bottom: 20px;
@@ -195,24 +229,15 @@ img{
 ::after, ::before {
     box-sizing: border-box;
 }
-.main__contain-right h3{
+.about__contain-text h3{
     font-size: 25px;
+    padding-bottom: 10px;
 }
-.main__contain-right h6{
+.about__contain-text h6{
+    padding-bottom: 20px;
     font-size: 14px;
     letter-spacing: 4px;
     text-transform: uppercase;
-}
-.btn-cv::after{
-    content: '';
-    width: 45%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.07);
-    
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: all 0.5s ease-in-out 0s;
 }
 .btn-cv{
     position: relative;
@@ -223,10 +248,70 @@ img{
     font-size: 15px;
     color: #fff;
     font-weight: 400;    
-    font-family: 'Teko', sans-serif;
-    
+       
+}
+.btn-cv::after{
+    content: '';
+    width: 45%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.07);   
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease;
 }
 .btn-cv:hover::after{
     width: 100%;
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.07);     
 }  
+/***************** F I N   A B O U T ****************/
+
+/********** R E S P O N S I N G   D E S I G N *********/
+
+@media only screen and (max-width: 800px){
+    .container{    
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    .header__text-center h3{
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .header__text-content-words h1{
+        margin-bottom: 20px;  
+        font-size: 33px;
+        font-weight: bolder;  
+    }
+    .about__contain{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*padding-left: 100px;*/
+        padding-bottom: 50px;
+    }
+    .about__contain-img{
+        border: 15px solid #fff;
+        border-radius: 10px;
+        /*margin-right: 15px;*/
+        margin: 0px;
+        width: 100%;
+    }
+    .about__contain-text{
+    /*margin-left: 15px;
+    margin-right: 15px;*/
+        margin: 0;
+        padding-top: 30px;
+        width: 100%;
+        font-size: 14px;
+        color: #c5c5c5;
+        line-height: 24px;
+        font-family: 'Rubik', sans-serif;
+    }   
+    .btn-cv{       
+        letter-spacing: 1px;
+        font-size: 14px;         
+    }
+}
