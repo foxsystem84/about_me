@@ -38,8 +38,39 @@ window.onscroll = function (){
         menu.classList.add('removeFixed');      
     }
 }
-function fadeIn(){
 
-}
+$(document).ready(function (){ 
+    $(".service__carousel").owlCarousel({
+        margin: 10,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        nav: false,
+        smartSpeed: 1000,
+        dots: true,
+        autoplayHoverPause: true,                
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 2,
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
+});
 
 
+$(document).ready(function(){
+    $(".card").hover(function(){
+        $(".card-rombo").css("background-color", "#f55422");
+        $(".card-rombo i").css("color", "white");
+        }, function(){
+        $(".card-rombo").css("background", "rgba(200, 200, 200, 0.07)");
+        $(".card-rombo i").css("color", "#f55422");
+    });
+});
