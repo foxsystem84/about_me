@@ -65,7 +65,7 @@ $(document).ready(function (){
 });
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
     $(".card").hover(function(){
         $(".card-rombo").css("background-color", "#f55422");
         $(".card-rombo i").css("color", "white");
@@ -73,4 +73,4 @@ $(document).ready(function(){
         $(".card-rombo").css("background", "rgba(200, 200, 200, 0.07)");
         $(".card-rombo i").css("color", "#f55422");
     });
-});
+});*/
