@@ -74,3 +74,39 @@ $(document).ready(function (){
         $(".card-rombo i").css("color", "#f55422");
     });
 });*/
+
+$(window).on('scroll', function () {
+    $(".skills__progress .skills__progress--bar").each(function () {
+        var bottom_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_window = $(window).scrollTop() + $(window).height();
+        var progressWidth = $(this).attr('aria-valuenow') + '%';
+        console.log("bottom_object:" +bottom_object);
+        console.log("botton windows:" +bottom_window);
+        console.log("progresswidh:" +progressWidth);
+        if (bottom_window > bottom_object) {
+            $(this).css({
+                width: progressWidth
+            });
+        }
+    });
+});
+
+
+// ProgressBar init ----------------------
+$('.skills__progress--bar').each(function() {
+    var $this = $(this);
+    var per = $this.data('num');
+    
+    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
+        duration: 5000,
+        step: function() {
+            $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+            $this.css("width", Math.floor(this.animatedValue) + '%');
+            $(".span").html(Math.floor(this.animatedValue) + '%');
+        },
+        complete: function() {
+            $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+            $(".span").html(Math.floor(this.animatedValue) + '%');
+        }
+    });
+});

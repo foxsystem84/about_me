@@ -489,6 +489,46 @@ img{
     margin-top: 18px;
     
 }
+/*************************** S K I L L S *****************************/
+.skills__row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;    
+}
+.skills__column{
+    width: 50%;
+}
+.skills__content{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.skills__row--items{
+    display: block;
+    width: 100%;
+}
+
+.skills__progress{
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+.skills__progress--bar{
+    /*width = 90%;*/
+    height: 4px;
+    animation: skills1 2s;
+    background-color: #f55422;
+}
+/*@keyframes skills1 {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+}*/
 
 /***************** F I N  W O R K  &  E D U C A T I O N *************/
 /********** R E S P O N S I N G   D E S I G N *********/
