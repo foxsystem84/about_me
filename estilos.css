@@ -277,7 +277,7 @@ img{
     align-items: center;
     color: white;
 }
-.service__title h1{
+/*.service__title h2{
     position: relative;
     font-weight: 700;
     padding-bottom: 20px;
@@ -288,7 +288,7 @@ img{
     font-family: 'Rubik', sans-serif;
     margin-bottom: 75px;
 }
-.service__title h1:after{
+.service__title h2:after{
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(165, 165, 165), rgba(0, 0, 0, 0));
     background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(165, 165, 165), rgba(0, 0, 0, 0));
     position: absolute;
@@ -300,7 +300,7 @@ img{
     content: "";    
     max-width: 300px;
     margin: 0 auto;
-}
+}*/
 .service__wrapper{
     width: 100%;
 }
@@ -403,7 +403,7 @@ img{
     align-items: center;
     color: white;
 }
-.education__title h1{
+/*.education__title h1{
     position: relative;
     font-weight: 700;
     padding-bottom: 20px;
@@ -426,7 +426,7 @@ img{
     content: "";    
     max-width: 300px;
     margin: 0 auto;
-}
+}*/
 .education__content{    
     display: flex;
     justify-content: space-between;   
