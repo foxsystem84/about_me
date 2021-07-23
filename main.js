@@ -21,7 +21,7 @@ attr: null,
 contentType: 'html',
 });
     
-window.onscroll = function (){    
+/*window.onscroll = function (){    
     const scroll = document.documentElement.scrollTop || document.body.scrollTop;  
       
     const menu = document.getElementById('menu');   
@@ -37,7 +37,22 @@ window.onscroll = function (){
         menu.classList.remove('fixed-top--color');  
         menu.classList.add('removeFixed');      
     }
-}
+}*/
+    
+    $(window).on('scroll', function() {
+        var menu = $('#menu');
+        if ($(window).scrollTop() > 200) {
+            menu.addClass('fixed-top');
+            menu.addClass('fixed-top--color');
+            menu.removeClass('removeFixed');
+            
+        } else {
+            menu.removeClass('fixed-top');
+            menu.removeClass('fixed-top--color');
+            menu.addClass('removeFixed');
+        }		
+
+    });		
 
 $(document).ready(function (){ 
     $(".service__carousel").owlCarousel({
@@ -76,37 +91,26 @@ $(document).ready(function (){
 });*/
 
 $(window).on('scroll', function () {
-    $(".skills__progress .skills__progress--bar").each(function () {
-        var bottom_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_window = $(window).scrollTop() + $(window).height();
-        var progressWidth = $(this).attr('aria-valuenow') + '%';
-        console.log("bottom_object:" +bottom_object);
-        console.log("botton windows:" +bottom_window);
-        console.log("progresswidh:" +progressWidth);
-        if (bottom_window > bottom_object) {
-            $(this).css({
-                width: progressWidth
-            });
+    $(".skills__progress--bar").each(function () {
+        let $this = $(this);
+        let per = $this.data('num');
+        let bottom_object = $this.offset().top + $this.outerHeight();
+        let bottom_window = $(window).scrollTop() + $(window).height();        
+      
+        if (bottom_window > bottom_object) {            
+                $this.animate({ animatedValue: per }, {
+                    duration: 2000,
+                    step: function() {
+                        $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+                        $this.css("width", Math.floor(this.animatedValue) + '%');
+                                            
+                    },
+                    complete: function() {
+                        $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+                    }                    
+                });      
+                
         }
     });
-});
-
-
-// ProgressBar init ----------------------
-$('.skills__progress--bar').each(function() {
-    var $this = $(this);
-    var per = $this.data('num');
     
-    $({ animatedValue: 0 }).animate({ animatedValue: per }, {
-        duration: 5000,
-        step: function() {
-            $this.attr("data-num", Math.floor(this.animatedValue) + '%');
-            $this.css("width", Math.floor(this.animatedValue) + '%');
-            $(".span").html(Math.floor(this.animatedValue) + '%');
-        },
-        complete: function() {
-            $this.attr("data-num", Math.floor(this.animatedValue) + '%');
-            $(".span").html(Math.floor(this.animatedValue) + '%');
-        }
-    });
 });

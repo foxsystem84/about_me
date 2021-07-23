@@ -498,37 +498,46 @@ img{
 }
 .skills__column{
     width: 50%;
+    margin: 0 15px;
 }
 .skills__content{
     color: white;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    
 }
 .skills__row--items{
     display: block;
     width: 100%;
+    margin-bottom: 30px;
 }
-
-.skills__progress{
-    width: 100%;
+.skills__row--items h6{
+    font-size: 18px;
+    margin: 10px 0;
+}
+.skills__progress{     
     height: 4px;
     background-color: white;
 }
 .skills__progress--bar{
-    /*width = 90%;*/
-    height: 4px;
-    animation: skills1 2s;
+    position: relative;    
+    width: 0;
+    height: 4px;    
     background-color: #f55422;
 }
-/*@keyframes skills1 {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 90%;
-    }
-}*/
+.skills__progress--bar::before{
+    content: attr(data-num);
+    position: absolute;
+    padding: 4px 6px;
+    border-radius: 4px;
+    background-color: red;
+    color: white;    
+    bottom: 15px;
+    font-size: 12px;    
+    right: 0;   
+    transform: translateX(50%) 
+}
 
 /***************** F I N  W O R K  &  E D U C A T I O N *************/
 /********** R E S P O N S I N G   D E S I G N *********/
