@@ -198,7 +198,8 @@ img{
     margin-bottom: 20px;
 }
 .about__title{
-    margin-bottom: 75px;    
+    margin-bottom: 75px; 
+    text-align: center;   
 }
 .about__title h2:after{
     background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgb(165, 165, 165), rgba(0, 0, 0, 0));
@@ -597,3 +598,28 @@ img{
         padding-bottom: 0;
     }
 }
+
+@media only screen and (max-width: 667px){
+    .container{    
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .about__contain-img{
+        border: 15px solid #fff;
+        width: calc(100% -  30px);
+    }
+    .education__content, .skills__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .timeline, .skills__column{
+        width: calc(100% - 50px);
+        margin: 0;
+        
+    }
+    
