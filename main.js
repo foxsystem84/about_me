@@ -114,3 +114,32 @@ $(window).on('scroll', function () {
     });
     
 });
+
+/*$(document).ready( function() {   
+    $('.grid').isotope({
+      itemSelector: '.grid-item',
+    });    
+    // filter items on button click
+    $('.filter-button-group').on( 'click', 'li', function() {
+      var filterValue = $(this).attr('data-filter');
+      $('.grid').isotope({ 
+          filter: filterValue 
+        });
+      $('.filter-button-group li').removeClass('filter-active');
+      $(this).addClass('filter-active');
+    });
+        })*/
+
+        // Porfolio isotope and filter
+$(window).on('load', function() {
+    var projectIsotope = $('.grid').isotope({
+        itemSelector: '.grid-item'
+    });
+    $('.filter-button-group li').on('click', function() {
+        $(".filter-button-group li").removeClass('filter-active');
+        $(this).addClass('filter-active');
+        projectIsotope.isotope({
+            filter: $(this).data('filter')
+        });
+    });
+});

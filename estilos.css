@@ -487,9 +487,9 @@ img{
 }
 .timeline-item--box p{
     font-size: 14px;
-    margin-top: 18px;
-    
+    margin-top: 18px;    
 }
+/***************** F I N  W O R K  &  E D U C A T I O N *************/
 /*************************** S K I L L S *****************************/
 .skills__row{
     display: flex;
@@ -539,8 +539,54 @@ img{
     right: 0;   
     transform: translateX(50%) 
 }
+/********************** P R O J E C T S **************************************/
+.nav{
+    list-style: none;
+    display: inline-block;
+    position: relative;    
+}
+.nav li{
+    position: relative;
+    /*float: left;*/
+    font-size: 14px;
+    line-height: 15px;
+    cursor: pointer;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    display: inline-block;
+    margin: 0 15px 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;    
+    background: rgba(255, 255, 255, 0.07);
+    transition: all 0.5s ease-in-out 0s;
+}
+.nav .filter-active, .nav li:hover{
+    padding: 10px 20px;
+    background-color: #f55422;
+    
+}
+.project__container{   
+    width: 100%;      
+}
+.project__container .project__grid-item{
+    max-width: 33.33%;      
+    text-align: center;
+    
+}
+.project__grid-item img{
+    max-width: 100%;
+    width: calc(100% - 30px);
+    height: 100%;
+    object-fit: cover;  
+    border-radius: 10px; 
+    margin-top: 30px;  
+}
+.row{
+    margin: 0 -15px;    
+}
 
-/***************** F I N  W O R K  &  E D U C A T I O N *************/
 /********** R E S P O N S I N G   D E S I G N *********/
 
 @media only screen and (max-width: 800px){
@@ -619,7 +665,6 @@ img{
     }
     .timeline, .skills__column{
         width: calc(100% - 50px);
-        margin: 0;
-        
+        margin: 0;        
     }
     
