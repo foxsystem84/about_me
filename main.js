@@ -39,20 +39,22 @@ contentType: 'html',
     }
 }*/
     
-    $(window).on('scroll', function() {
-        var menu = $('#menu');
-        if ($(window).scrollTop() > 200) {
-            menu.addClass('fixed-top');
-            menu.addClass('fixed-top--color');
-            menu.removeClass('removeFixed');
-            
-        } else {
-            menu.removeClass('fixed-top');
-            menu.removeClass('fixed-top--color');
-            menu.addClass('removeFixed');
-        }		
-
-    });		
+$(window).on('scroll', function() {
+    var menu = $('.menu-nav');
+    var barToggle = $('.bar-toggle');
+    
+    if ($(window).scrollTop() > 0) {
+        menu.addClass('fixed-top');
+        menu.addClass('fixed-top--color');
+        barToggle.addClass('color');
+                 
+    } else {
+        menu.removeClass('fixed-top');
+        menu.removeClass('fixed-top--color');
+        barToggle.addClass('color');
+        
+    }	
+});	
 
 $(document).ready(function (){ 
     $(".service__carousel").owlCarousel({
@@ -79,17 +81,6 @@ $(document).ready(function (){
     })
 });
 
-
-/*$(document).ready(function(){
-    $(".card").hover(function(){
-        $(".card-rombo").css("background-color", "#f55422");
-        $(".card-rombo i").css("color", "white");
-        }, function(){
-        $(".card-rombo").css("background", "rgba(200, 200, 200, 0.07)");
-        $(".card-rombo i").css("color", "#f55422");
-    });
-});*/
-
 $(window).on('scroll', function () {
     $(".skills__progress--bar").each(function () {
         let $this = $(this);
@@ -98,38 +89,22 @@ $(window).on('scroll', function () {
         let bottom_window = $(window).scrollTop() + $(window).height();        
       
         if (bottom_window > bottom_object) {            
-                $this.animate({ animatedValue: per }, {
-                    duration: 2000,
-                    step: function() {
-                        $this.attr("data-num", Math.floor(this.animatedValue) + '%');
-                        $this.css("width", Math.floor(this.animatedValue) + '%');
-                                            
-                    },
-                    complete: function() {
-                        $this.attr("data-num", Math.floor(this.animatedValue) + '%');
-                    }                    
-                });      
+            $this.animate({ animatedValue: per }, {
+                duration: 2000,
+                step: function() {
+                    $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+                    $this.css("width", Math.floor(this.animatedValue) + '%');
+                                        
+                },
+                complete: function() {
+                    $this.attr("data-num", Math.floor(this.animatedValue) + '%');
+                }                    
+            });      
                 
         }
     });
     
 });
-
-/*$(document).ready( function() {   
-    $('.grid').isotope({
-      itemSelector: '.grid-item',
-    });    
-    // filter items on button click
-    $('.filter-button-group').on( 'click', 'li', function() {
-      var filterValue = $(this).attr('data-filter');
-      $('.grid').isotope({ 
-          filter: filterValue 
-        });
-      $('.filter-button-group li').removeClass('filter-active');
-      $(this).addClass('filter-active');
-    });
-        })*/
-
         // Porfolio isotope and filter
 $(window).on('load', function() {
     var projectIsotope = $('.grid').isotope({
@@ -142,4 +117,45 @@ $(window).on('load', function() {
             filter: $(this).data('filter')
         });
     });
+});
+
+$(document).ready(function (){ 
+    $(".testimonials__carousel").owlCarousel({
+        margin: 100,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 6000,
+        nav: false,
+        smartSpeed: 1000,
+        dots: true,
+        autoplayHoverPause: true,                
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 1,
+            },
+            1000: {
+                items: 1
+            }
+        }
+    })
+});
+
+$(document).ready(function(){
+    var contador = 1;
+    $(".button-toggle").click(function(){   
+        
+        if(contador == 1){
+            $(".button-toggle").addClass("open")
+            contador = 0;
+        }else {            
+            $(".button-toggle").removeClass("open");
+            contador = 1;
+        }
+        $(".menu-nav__link").toggle("active");
+    });
+   
 });
