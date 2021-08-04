@@ -87,6 +87,9 @@ a{
     display: block;
     padding: 1rem;
 }
+.menu-nav.fixed-top li a{
+    color: black;
+}
 .menu-nav__link li a{
     transition: all 0.5s ease-in-out 0s;
 }
@@ -102,16 +105,15 @@ a{
      color: black;        
      transition: all 1s ease-in-out;
 }
-.removeFixed{
-    
+.removeFixed{    
     height: 43px; 
     align-items: center;
     background-color: transparent;
     transition: all .7s linear;
 }
-.menu-nav.fixed-top--color  a{
+/*.menu-nav.fixed-top--color  a{
     color: black;
-}
+}*/
 .header{
     background: url(./imagenes/home-bg.jpg);
     position: relative;
@@ -826,20 +828,22 @@ button{
         right: 30px;       
     }
     .bar-toggle.color{        
-        background-color:  black;
+        background-color: black;
     }
     .bar-toggle.color::before, 
     .bar-toggle.color::after{
         content: '';        
-        background-color:  black;
-    }
+        background-color: black;
+    }    
     .menu-nav__link{
         display: none;                
-        width: 100%; 
-        flex-direction: column;            
-    }
+        width: 100%;     
+    }        
     .menu-nav__link.active{        
-        display: flex;                
+        display: flex;              
+    }
+    .menu-nav.fixed-top .menu-nav__link a, .menu-nav .menu-nav__link a{
+        color: black;
     }
     .menu-nav .container{         
         flex-direction: column;        
