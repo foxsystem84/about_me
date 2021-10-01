@@ -10,27 +10,20 @@
     <title>About me</title>
 </head>
 <body>           
-    <nav class="menu-nav" id="menu">
-        <div class="container">             
-            <div class="brand-tittle"><h1>Grover</h1></div>   
-            <div class="button-toggle">
-                <div class="bar-toggle"></div>
-            </div>  
-            <div class="menu-nav__link">                
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Portafolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>                
-            </div>
-            
-            
-        </div>
+    <nav>                    
+        <a class="brand-tittle"><h1>Grover</h1></a>                            
+        <ul>                    
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#project">Portafolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>     
+        <div class="button-toggle">
+            <div class="bar-toggle"></div>
+        </div>  
     </nav>
-    <header class="header hero__equal"> 
-        <div class="container">           
+    <secction class="header hero__equal" id="header">                   
             <div class="header__text-center">
                 <h3>Welcome to my website</h3>
                 <div class="header__text-content-words">   
@@ -48,9 +41,8 @@
                 </div>
                 <a class="button" href="#">View work</a>
                 <a class="button" href="#">Hire me</a>  
-            </div>
-        </div>        
-    </header>
+            </div>               
+    </secction>
     <section id="about" class="bg-dark section-pading">
         <div class="container">
             <div class="about">
@@ -374,10 +366,10 @@
                     <h2>Get in Touch</h2>
                 </div>
                 <form class="contact__form">
-                    <input class="input" type="text" placeholder="Nombre">
-                    <input class="input" type="text" placeholder="Subject">
-                    <input class="input" type="text" placeholder="Email">
-                    <textarea class="input" placeholder="Mensaje"></textarea>
+                    <input class="input" type="text" placeholder="Nombre" name="name">
+                    <input class="input" type="text" placeholder="Subject" name="subject">
+                    <input class="input" type="email" placeholder="Email" name="email">
+                    <textarea class="input" placeholder="Mensaje" name="msg"></textarea>
                     <button class="btn1-cv" type="button">Enviar mensaje</button>
                 </form>
             </div>

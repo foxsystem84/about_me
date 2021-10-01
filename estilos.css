@@ -1,11 +1,14 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Mulish', sans-serif;    
 }
 a{
-    transition: all 0.5s ease-in-out 0s; 
-    
+    transition: all 0.5s ease-in-out 0s;     
+}
+html{
+    scroll-behavior: smooth;
 }
 .section-pading{
     padding: 100px 0;
@@ -19,16 +22,50 @@ a{
     margin-left: 250px;
     margin-right: 250px;  
 }
-.brand-tittle{
+nav .brand-tittle{
     color: #ffc209;
     font-size: 1.5rem;
 }
-.menu-nav{        
+nav{        
     width: 100%;     
-    z-index: 100;    
-    position: fixed;     
-    padding-top: 20px;
-    padding-bottom: 20px;
+    z-index: 100;
+    position: fixed;   
+    top: 0;
+    left: 0;  
+    /*padding-top: 10px;
+    padding-bottom: 20px;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding:  20px 250px;
+}
+nav ul{
+    position: relative;
+    display: flex;    
+    justify-content: center;
+    align-items: center;   
+}
+nav ul li{
+    position: relative;
+    list-style: none;   
+}
+nav ul li a{
+    position: relative;
+    /*font-size: 1rem;*/
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    margin: 0 20px;
+}
+nav.sticky{
+    padding: 20px 250px;
+    background: #fff;    
+}
+nav.sticky ul li a{    
+    color: #000;    
+    font-weight:700;
 }
 .button-toggle{
     position: absolute;
@@ -46,7 +83,7 @@ a{
 .bar-toggle{
     width: 40px;
     height: 6px;
-    background-color: #fff;
+    background-color: #92909a;;
     position: relative;
     border-radius: 5px;
     transition: all .5s ease-in-out;
@@ -56,7 +93,7 @@ a{
     content: '';
     width: 40px;
     height: 6px;
-    background-color: #fff;
+    background-color: #92909a;;
     position: absolute;
     border-radius: 5px;
     transition: all .5s ease-in-out;
@@ -67,53 +104,6 @@ a{
 .bar-toggle::after{
     transform: translateY(16px);
 }
-.menu-nav .container{     
-    display: flex;
-    justify-content: space-between;   
-    align-items: center;
-}
-.menu-nav__link ul{
-    display: flex;    
-}
-.menu-nav__link li{
-    list-style: none; 
-    padding-left: 30px;   
-}
-.menu-nav__link li a{
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 1rem;
-}
-.menu-nav.fixed-top li a{
-    color: black;
-}
-.menu-nav__link li a{
-    transition: all 0.5s ease-in-out 0s;
-}
-.menu-nav__link a:hover{
-    opacity: 0.5;
-}
-.menu-nav__link > a:hover{
-    opacity: 1;
-}
-.menu-nav.fixed-top{
-     height: 43px;     
-     background-color: white; 
-     /*color: black;*/        
-     transition: all 1s ease-in-out;
-}
-.removeFixed{    
-    height: 43px; 
-    align-items: center;
-    background-color: transparent;
-    transition: all .7s linear;
-}
-/*.menu-nav.fixed-top--color  a{
-    color: black;
-}*/
 .header{
     background: url(./imagenes/home-bg.jpg);
     position: relative;
@@ -753,6 +743,32 @@ button{
 /********** R E S P O N S I N G   D E S I G N *************************/
 
 @media only screen and (max-width: 800px){
+    nav{        
+        width: 100%;     
+        z-index: 100;
+        position: fixed;   
+        top: 0;
+        left: 0;  
+        /*padding-top: 10px;
+        padding-bottom: 20px;*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.6s;
+        padding:  20px 50px;
+    }
+    nav .brand-tittle{
+        position: relative;
+        color: #ffc209;
+        font-size: 1rem;
+        font-weight:bold;       
+        text-transform: uppercase;
+        transition: 0.6s;
+    }
+    nav.sticky{
+        padding: 15px 50px;
+        background: #fff;    
+    }
     .container{    
         padding-left: 15px;
         padding-right: 15px;
@@ -817,6 +833,9 @@ button{
 }
 
 @media only screen and (max-width: 667px){
+    nav ul {  
+        display: none;         
+    } 
     .container{    
         padding-left: 15px;
         padding-right: 15px;
@@ -834,35 +853,7 @@ button{
     .bar-toggle.color::after{
         content: '';        
         background-color: black;
-    }    
-    .menu-nav__link{
-        display: none;                
-        width: 100%;     
     }        
-    .menu-nav__link.active{        
-        display: flex;              
-    }
-    .menu-nav.fixed-top .menu-nav__link a, .menu-nav .menu-nav__link a{
-        color: black;
-    }
-    .menu-nav .container{         
-        flex-direction: column;        
-        align-items: center;   
-        background-color: #fff;
-        margin: 0;          
-    }
-    .menu-nav .brand-tittle{        
-        position: absolute;
-        left: 30px;
-    }
-    .menu-nav__link ul{
-        padding-top: 3rem;
-        width: 100%;        
-        flex-direction: column;
-    }
-    .menu-nav__link li{
-        text-align: center;
-    }
     /* A N I M A T I O N*/
     .button-toggle.open .bar-toggle{
         transform: translateX(-50px);
@@ -874,48 +865,33 @@ button{
     .button-toggle.open .bar-toggle::after{
         transform: rotate(-45deg) translate(35px, 35px);
     }
-    /*.logo{
-        position: relative;
-        z-index: 40;
-    }
-    .btn__toggle{
-        display:block;       
-        width: 100%;
-    }
-    .menu-nav__link{
-        
-        position: fixed;
-        z-index: 30;
-        top: -100%;
-        height: 50%;
-        width: 100%;
+    nav.active ul{        
+        display: flex;  
+        position: absolute; 
+        top: 0;
         left: 0;
-        color: black;
-        background-color: white;
-        padding-top: 80px;
-        align-items: center;
+        width: 100%; 
+        padding-top: 60px;    
+        flex-direction: column;                      
+        transition: 5.6s;  
     }
-    .menu-nav__link ul{
-        display: inline-block;        
+    nav.active ul li{
+        position: relative;
+        list-style: none; 
+        margin: 10px 0px;
     }
-    .menu-nav__link ul li{
-        padding: 15px 30px;       
-    }   
-    .menu-nav.fixed-top{
-        height: 43px;     
-        background-color: white;         
-        transition: all 1s ease-in-out;
+    nav.active ul li a{
+        position: relative;
+        
     }
-   .removeFixed{
-       background-color: transparent;
-       transition: all .7s linear;
+    nav.active, menu.sticky{
+        
+        padding: 20px 50px 250px 50px;
+        background: #fff;    
     }
-   .menu-nav.fixed-top--color a{
-       color: black;
-    }
-    .menu-nav.fixed-top--color  a{
-        color: black;
-    }*/ 
+    nav.active ul li a{
+        color: #000;
+    }  
     .about__contain-img{
         border: 15px solid #fff;
         width: calc(100% -  30px);
