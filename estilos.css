@@ -59,12 +59,19 @@ nav ul li a{
     letter-spacing: 1.5px;
     margin: 0 20px;
 }
+nav ul li a:hover{
+    color: #ffc209;
+}
 nav.sticky{
-    padding: 20px 250px;
+    padding: 25px 250px;
     background: #fff;    
 }
 nav.sticky ul li a{    
     color: #000;    
+    font-weight:700;
+}
+nav.sticky ul li a:hover{    
+    color: #ffc209;    
     font-weight:700;
 }
 .button-toggle{
@@ -83,7 +90,7 @@ nav.sticky ul li a{
 .bar-toggle{
     width: 40px;
     height: 6px;
-    background-color: #92909a;;
+    background-color: #ffc209;;
     position: relative;
     border-radius: 5px;
     transition: all .5s ease-in-out;
@@ -93,7 +100,7 @@ nav.sticky ul li a{
     content: '';
     width: 40px;
     height: 6px;
-    background-color: #92909a;;
+    background-color: #ffc209;;
     position: absolute;
     border-radius: 5px;
     transition: all .5s ease-in-out;
@@ -764,7 +771,7 @@ button{
         font-weight:bold;       
         text-transform: uppercase;
         transition: 0.6s;
-    }
+    }    
     nav.sticky{
         padding: 15px 50px;
         background: #fff;    
@@ -841,19 +848,19 @@ button{
         padding-right: 15px;
         margin-left: 15px;
         margin-right: 15px;
-    }     
+    }        
     .button-toggle{
         display: flex; 
         right: 30px;       
     }
-    .bar-toggle.color{        
+    /*.bar-toggle.color{        
         background-color: black;
     }
     .bar-toggle.color::before, 
     .bar-toggle.color::after{
         content: '';        
         background-color: black;
-    }        
+    }      */  
     /* A N I M A T I O N*/
     .button-toggle.open .bar-toggle{
         transform: translateX(-50px);
@@ -884,8 +891,7 @@ button{
         position: relative;
         
     }
-    nav.active, menu.sticky{
-        
+    nav.active, menu.sticky{        
         padding: 20px 50px 250px 50px;
         background: #fff;    
     }
@@ -918,3 +924,30 @@ button{
         width: 100%;
     }    
 }   
+
+/***VALIDAR FORMULARIO CONTACTENOS***/
+/*input:invalid{
+    border-color: #900;
+    background-color: rgb(243, 255, 221);
+  }
+  
+  input:focus:invalid {
+    outline: none;
+  }
+  */
+  /* Este es el diseño para nuestros mensajes de error */
+  .error {
+    width : 100%;
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+  }
+  
+  .error.active {
+    padding: 0.3em;
+  }

@@ -113,23 +113,73 @@ $(document).ready(function (){
 });
 
 const menu= document.querySelector("nav");                
-    const barToggle = document.querySelector('.bar-toggle');
-    const btnToggle = document.querySelector('.button-toggle');
-    
-        
-    window.addEventListener("scroll", function(){        
-        menu.classList.toggle("sticky", window.scrollY > 0)
-        barToggle.classList.toggle("color", window.scrollY > 0)        
-    })    
+const barToggle = document.querySelector('.bar-toggle');
+const btnToggle = document.querySelector('.button-toggle');
 
-    var contador=1;
-    btnToggle.addEventListener("click", function(){        
-        if (contador == 1){
-            btnToggle.classList.add("open")            
-            contador = 0          
-        }else{
-            btnToggle.classList.remove("open")                   
-            contador = 1           
-        }        
-        menu.classList.toggle("active")       
-    })
+    
+window.addEventListener("scroll", function(){        
+    menu.classList.toggle("sticky", window.scrollY > 100)
+    if(this.window.scrollY >100){
+        barToggle.classList.add("color")
+    }     
+    if(this.window.scrollY <100 ){
+        barToggle.classList.remove("color")
+        
+    }
+    
+})    
+
+var contador=1;
+btnToggle.addEventListener("click", function(){        
+    if (contador == 1){
+        btnToggle.classList.add("open") 
+        menu.classList.add("sticky")
+        menu.classList.add("active")   
+        barToggle.classList.add("color")        
+        contador = 0          
+    }else{
+        btnToggle.classList.remove("open")
+        menu.classList.add("sticky")      
+        menu.classList.remove("active")    
+        barToggle.classList.add("color")         
+        contador = 1           
+    }  
+})
+/*
+const form = document.querySelector("#form")
+const nameID=document.getElementById("name")
+const mail = document.getElementById("mail")
+const mailError = document.querySelector("#mail + span.error")
+form.addEventListener("submit", handleSubmit)
+mail.addEventListener('input', validateMail)
+
+  function validateMail(event){
+    if(mail.validity.valid){
+        mailError.innerHTML=''
+        mailError.className='error'
+    }else{
+        showError()
+    }
+  }
+
+  function handleSubmit(event){
+    event.preventDefault();
+    if(nameID.)
+    if(!mail.validity.valid) {        
+        showError();        
+        
+      }    
+  }
+
+  function showError() {
+    if(mail.validity.valueMissing) {      
+      mailError.textContent = 'Debe introducir una dirección de correo electrónico.';
+    } else if(mail.validity.typeMismatch) {     
+      mailError.textContent = 'El valor introducido debe ser una dirección de correo electrónico.';
+    } else if(mail.validity.tooShort) {      
+      mailError.textContent = 'El correo electrónico debe tener al menos ${ mail.minLength } caracteres; ha introducido ${ email.value.length }.';
+    }    
+    mailError.className = 'error activo';
+  }
+*/
+

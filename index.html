@@ -7,11 +7,11 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.google.com/share?selection.family=Mulish:ital,wght@0,200;1,900">
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <script src="https://kit.fontawesome.com/a403b00f35.js" crossorigin="anonymous"></script>
-    <title>About me</title>
+    <title>Grover LLanos</title>
 </head>
 <body>           
     <nav>                    
-        <a class="brand-tittle"><h1>Grover</h1></a>                            
+        <a class="brand-tittle"><h1>Grover.dev</h1></a>                            
         <ul>                    
             <li><a href="#header">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -39,8 +39,8 @@
                     <a href="#"><i class="fab fa-tiktok"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
-                <a class="button" href="#">View work</a>
-                <a class="button" href="#">Hire me</a>  
+                <a class="button" href="#project">View work</a>
+                <a class="button" href="#contact">Hire me</a>  
             </div>               
     </secction>
     <section id="about" class="bg-dark section-pading">
@@ -359,19 +359,22 @@
         </div>
     </section>
     
-    <section id="contact" class="section-pading bg-dark">
+    <section id="contact" class="section-pading bg-dark" action="email.php">
         <div class="container">
             <div class="skills__row">
                 <div class="about__title">
                     <h2>Get in Touch</h2>
                 </div>
-                <form class="contact__form">
-                    <input class="input" type="text" placeholder="Nombre" name="name">
-                    <input class="input" type="text" placeholder="Subject" name="subject">
-                    <input class="input" type="email" placeholder="Email" name="email">
-                    <textarea class="input" placeholder="Mensaje" name="msg"></textarea>
-                    <button class="btn1-cv" type="button">Enviar mensaje</button>
+                <form id="form" class="contact__form" method="POST">
+                    <input id="name" class="input" type="text" placeholder="Nombre" name="name"> 
+                    <input class="input" type="text" placeholder="Subject" name="subject" required>
+                    
+                    <input id="mail" class="input" type="email" placeholder="Email" name="email">
+                    <span class="error" aria-live="polite"></span>
+                    <textarea class="input" placeholder="Mensaje" name="msg" required></textarea>
+                    <button class="btn1-cv" type="submit">Enviar mensaje</button>
                 </form>
+               
             </div>
         </div>
     </section>
