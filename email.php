@@ -9,7 +9,7 @@
             $header = "Enviado desde la página de Grover.dev";
             $mensajeCompleto = $msg . "\nAtentamente: " . $name;
 
-            mail($destinatario, $subject, $mensajeCompleto, $header)
+            mail($destinatario, $subject, $mensajeCompleto, $header);
             echo "<h4>Email enviado exitosamente</h4>";
         }
     }
